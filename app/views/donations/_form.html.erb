@@ -1,0 +1,40 @@
+<%= form_with(model: donation, local: true) do |form| %>
+  <% if donation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donation.errors.count, "error") %> prohibited this donation from being saved:</h2>
+      <ul>
+        <% donation.error_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+
+  <%= form.label :zip_code %>
+  <%= form.text_field :zip_code %>
+
+  <%= form.label :phone_number %>
+  <%= form.text_field :phone_number %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.label :donation_category %>
+  <%= form.text_field :donation_category %>
+
+  <%= form.label :item %>
+  <%= form.text_field :item %>
+
+  <%= form.label :quantity %>
+  <%= form.number_field :quantity %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
