@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_03_19_190149) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "zip_code"
     t.string "phone_number"
     t.string "email"
     t.string "donation_category"
