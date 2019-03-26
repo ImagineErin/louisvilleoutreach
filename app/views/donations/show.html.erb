@@ -2,3 +2,12 @@
 
 <%= link_to 'Edit', edit_donation_path(@donation) %> |
 <%= link_to 'Back', donations_path %>
+
+<h1><%= @donation.first_name                                                                                                                           %></h1>
+Info:
+<ul>
+  <li>Location: <%= @donation.zip_code %></li>
+  <li>Donation category: <%= @donation.donation_category %></li>
+  <li>Item: <%= @donation.item %></li>
+  <li>Quantity: <%= @donation.donation_category %></li>
+</ul>

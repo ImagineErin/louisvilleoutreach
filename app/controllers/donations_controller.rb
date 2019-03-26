@@ -1,6 +1,11 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
 
+  #USER_ID, PASSWORD = "zara", "pass123"
+
+# ********Require authentication only for edit and delete operation
+   #before_filter :authenticate, :only => [ :edit, :delete ]
+
   # GET /donations
   # GET /donations.json
   def index
@@ -10,6 +15,7 @@ class DonationsController < ApplicationController
   # GET /donations/1
   # GET /donations/1.json
   def show
+    @donation = Donation.find(params[:id])
   end
 
   # GET /donations/new
@@ -69,6 +75,13 @@ class DonationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
-      params.fetch(:donation, {})
+      params.require(:donation).permit!
     end
 end
+
+#private  **************
+   #def authenticate
+      #authenticate_or_request_with_http_basic do |id, password|
+         #id == USER_ID && password == PASSWORD
+      #end
+   #end

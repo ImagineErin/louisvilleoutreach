@@ -15,12 +15,16 @@
         <td><%=donation.first_name %></td>
         <td><%=donation.last_name %></td>
         <td><%=donation.zip_code %></td>
-        <td><%=donation.phone_number %></td>
+        <td><%=donation.phone_number %> &nbsp; &nbsp; </td>
         <td><%=donation.email %></td>
-        <td><%=donation.donation_category %></td>
-        <td><%=donation.item %></td>
-        <td><%=donation.quantity %></td>
+      </tr>
+      <tr>
+        <td><%=donation.donation_category %> &nbsp; &nbsp; </td>
+        <td><%=donation.item %> &nbsp; &nbsp; </td>
+        <td><%=donation.quantity %> &nbsp; &nbsp; </td>
         <td><%=donation.notes %></td>
+      </tr>
+      <tr>
         <td><%= link_to 'Show', donation %></td>
         <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
         <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
